@@ -370,6 +370,31 @@ tween:Play()
 end)
 
 
+Window:AddCommand('banlands', {'player'}, 'sends them to banlands', function(Arguments, Speaker)
+    print(Arguments[1]) 
+  local h = game.Players.LocalPlayer.Character.Humanoid:Clone()
+local plr = game.Players.LocalPlayer.Character
+local CF = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+local lp = game.Players.LocalPlayer
+local char = Speaker.Character
+h.Parent = game.Players.LocalPlayer.Character
+h.Name = "Hum"
+
+game.Players.LocalPlayer.Character.Humanoid:Destroy()
+
+for _,v in pairs(game.Players.LocalPlayer:GetDescendants()) do
+    if v.ClassName == "Tool" then
+        v.Parent = plr
+    end
+end
+workspace.CurrentCamera.CameraSubject = char
+local Person = game:GetService("Workspace")[(Arguments[1])].HumanoidRootPart.CFrame
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Person
+wait(1)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-999999999999999999999999999999, 2647586.5, 16135477, -0.989213824, 0.00574239623, 0.146365836, 0.005804908, 0.999983132, -2.75625993e-08, -0.146363363, 0.00084961293, -0.989230514)
+end)
+
+
 
 
 
@@ -423,4 +448,5 @@ end)
 function GetPlayer()
     game:GetService("Players"):GetPlayers()
 end
+
 
