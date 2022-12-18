@@ -310,8 +310,116 @@ end)
 
 
 
+Window:AddCommand('kidnap', {'player'}, 'kidnaps them', function(Arguments, Speaker)
+    print(Arguments[1]) 
+  local h = game.Players.LocalPlayer.Character.Humanoid:Clone()
+local plr = game.Players.LocalPlayer.Character
+local CF = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+local lp = game.Players.LocalPlayer
+
+h.Parent = game.Players.LocalPlayer.Character
+h.Name = "Hum"
+
+game.Players.LocalPlayer.Character.Humanoid:Destroy()
+
+for _,v in pairs(game.Players.LocalPlayer:GetDescendants()) do
+    if v.ClassName == "Tool" then
+        v.Parent = plr
+    end
+end
+local Person = game:GetService("Workspace")[(Arguments[1])].HumanoidRootPart.CFrame
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Person
+    
+wait(1)
+
+tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new(200, Enum.EasingStyle.Linear)
+
+tween = tweenService:Create(game:GetService("Players")["LocalPlayer"].Character.HumanoidRootPart, tweenInfo, {CFrame = CFrame.new(0, 0, 99999)})
+tween:Play()
+end)
+
+
+Window:AddCommand('heaven', {'player'}, 'sends them to heaven', function(Arguments, Speaker)
+    print(Arguments[1]) 
+  local h = game.Players.LocalPlayer.Character.Humanoid:Clone()
+local plr = game.Players.LocalPlayer.Character
+local CF = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+local lp = game.Players.LocalPlayer
+
+h.Parent = game.Players.LocalPlayer.Character
+h.Name = "Hum"
+
+game.Players.LocalPlayer.Character.Humanoid:Destroy()
+
+for _,v in pairs(game.Players.LocalPlayer:GetDescendants()) do
+    if v.ClassName == "Tool" then
+        v.Parent = plr
+    end
+end
+
+local Person = game:GetService("Workspace")[(Arguments[1])].HumanoidRootPart.CFrame
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Person
+wait(1)
+
+tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new(100, Enum.EasingStyle.Linear)
+
+tween = tweenService:Create(game:GetService("Players")["LocalPlayer"].Character.HumanoidRootPart, tweenInfo, {CFrame = CFrame.new(0, 10000, 0)})
+tween:Play()
+end)
+
+
+
+
+
+
+
+Window:AddCommand('GetAllVending', {'Gives you everything from vending machine'}, '', function(Arguments, Speaker)
+    print(Arguments[1]) 
+    print("test")
+    local chara = game.Players.LocalPlayer.Character
+  local origin = chara.HumanoidRootPart.CFrame
+  chara.HumanoidRootPart.CFrame = CFrame.new(-178.71051, 430.599976, 5512.71729, 0.999999642, 5.4630334e-08, -0.000845939736, -5.45688152e-08, 1, 7.27456211e-08, 0.000845939736, -7.26994358e-08, 0.999999642)
+  local clickdetector =game:GetService("Workspace").SnackMachine.Selection1.ClickDetector
+fireclickdetector(clickdetector)
+local clickdetector =game:GetService("Workspace").SnackMachine.Selection2.ClickDetector
+wait(1)
+fireclickdetector(clickdetector)
+wait(1)
+local clickdetector =game:GetService("Workspace").SnackMachine.Selection3.ClickDetector
+
+fireclickdetector(clickdetector)
+wait(1)
+local clickdetector =game:GetService("Workspace").SnackMachine.Selection4.ClickDetector
+
+fireclickdetector(clickdetector)
+wait(1)
+local clickdetector =game:GetService("Workspace").SnackMachine.Selection5.ClickDetector
+
+fireclickdetector(clickdetector)
+wait(1)
+local clickdetector =game:GetService("Workspace").SnackMachine.Selection6.ClickDetector
+
+fireclickdetector(clickdetector)
+wait(1)
+local clickdetector =game:GetService("Workspace").SnackMachine.Selection7.ClickDetector
+
+fireclickdetector(clickdetector)
+wait(1)
+local clickdetector =game:GetService("Workspace").SnackMachine.Selection8.ClickDetector
+
+fireclickdetector(clickdetector)
+            wait(1)
+            chara.HumanoidRootPart.CFrame = origin
+end)
+
+
+
+
+
+
 
 function GetPlayer()
     game:GetService("Players"):GetPlayers()
 end
+
 
