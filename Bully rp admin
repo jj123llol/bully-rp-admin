@@ -1,0 +1,317 @@
+local Library = loadstring(game:HttpGet('https://raw.githubusercontent.com/VisualRoblox/Roblox/main/UI-Libraries/Visual%20Command%20UI%20Library/Source.lua', true))()
+
+local Window = Library:CreateWindow({
+    Name = 'Bully rp admin-by jude', -- // The name of the created window.
+    IntroText = 'Judes shitty admin', -- // The text that will show in the intro / loading screen.
+    IntroIcon = 'rbxassetid://11215015018', -- // The AssetId of the icon that will show in the intro / loading screen.
+    IntroBlur = true, -- // If there should be a blur during the intro.
+    IntroBlurIntensity = 15, -- // The intensity of the blur.
+    Theme = Library.Themes.dark, -- // The theme the library should use (see more in Themes.md).
+    Position = 'bottom', -- // The position the Window can be in (Top, TopLeft, TopRight, Bottom, BottomLeft, BottomRight).
+    Draggable = true, -- // If the window is draggable (Only only X-axis).
+    Prefix = ';' -- // The prefix that will be used before typing a command (will make the UI popup as well).
+})
+Window:CreateNotification('READ ME 1ST', 'Goto is case sensitive', 90)
+Window:CreateNotification('READ ME 2ND', 'and put full username', 90)
+Window:CreateNotification('READ ME 3RD', 'put "me" or space after every command', 90)
+Window:CreateNotification('READ ME 4TH', 'besides goto and RolePlayName', 90)
+
+Window:AddCommand('READ ME', {'put me after every command'}, 'commands only work on u', function(Arguments, Speaker)
+    print(Arguments[1]) 
+end)
+
+
+
+
+
+
+
+
+
+
+Window:AddCommand('furry', {'turns you into a furry'}, '', function(Speaker)
+game:GetService("Players").LocalPlayer.PlayerGui.AvatarEditor.RemoveHats:FireServer()
+wait(0.1)
+local args = {
+    [1] = {
+        ["Category"] = "Hat1",
+        ["AssetId"] = "11600219096"
+    }
+}
+
+game:GetService("Players").LocalPlayer.PlayerGui.AvatarEditor.WearItem:FireServer(unpack(args))
+
+local args = {
+    [1] = {
+        ["Category"] = "Hat2",
+        ["AssetId"] = "11600222535"
+    }
+}
+
+game:GetService("Players").LocalPlayer.PlayerGui.AvatarEditor.WearItem:FireServer(unpack(args))
+
+local args = {
+    [1] = {
+        ["Category"] = "Hat3",
+        ["AssetId"] = "11600208131"
+    }
+}
+
+game:GetService("Players").LocalPlayer.PlayerGui.AvatarEditor.WearItem:FireServer(unpack(args))
+
+local args = {
+    [1] = {
+        ["Category"] = "Pants",
+        ["AssetId"] = "11621750098"
+    }
+}
+
+game:GetService("Players").LocalPlayer.PlayerGui.AvatarEditor.WearItem:FireServer(unpack(args))
+
+
+local args = {
+    [1] = {
+        ["Category"] = "Shirt",
+        ["AssetId"] = "11621737497"
+    }
+}
+
+game:GetService("Players").LocalPlayer.PlayerGui.AvatarEditor.WearItem:FireServer(unpack(args))
+ 
+
+end)
+
+
+
+
+
+
+
+
+
+
+
+
+Window:AddCommand('hentai', {'Makes you a hentai girl'}, '', function(Speaker)
+game:GetService("Players").LocalPlayer.PlayerGui.AvatarEditor.RemoveHats:FireServer()
+wait(0.1)
+local args = {
+    [1] = {
+        ["Category"] = "Hat1",
+        ["AssetId"] = "107900101866"
+    }
+}
+
+game:GetService("Players").LocalPlayer.PlayerGui.AvatarEditor.WearItem:FireServer(unpack(args))
+
+local args = {
+    [1] = {
+        ["Category"] = "Hat2",
+        ["AssetId"] = "10824058593"
+    }
+}
+
+game:GetService("Players").LocalPlayer.PlayerGui.AvatarEditor.WearItem:FireServer(unpack(args))
+
+local args = {
+    [1] = {
+        ["Category"] = "Hat3",
+        ["AssetId"] = "9731244002"
+    }
+}
+
+game:GetService("Players").LocalPlayer.PlayerGui.AvatarEditor.WearItem:FireServer(unpack(args))
+
+local args = {
+    [1] = {
+        ["Category"] = "Face",
+        ["AssetId"] = "66330310"
+    }
+}
+
+game:GetService("Players").LocalPlayer.PlayerGui.AvatarEditor.WearItem:FireServer(unpack(args))
+
+
+
+
+
+local args = {
+    [1] = {
+        ["Category"] = "Pants",
+        ["AssetId"] = "11117475304"
+    }
+}
+
+game:GetService("Players").LocalPlayer.PlayerGui.AvatarEditor.WearItem:FireServer(unpack(args))
+
+
+local args = {
+    [1] = {
+        ["Category"] = "Shirt",
+        ["AssetId"] = "11097185303"
+    }
+}
+
+game:GetService("Players").LocalPlayer.PlayerGui.AvatarEditor.WearItem:FireServer(unpack(args))
+ 
+
+end)
+
+Window:AddCommand('GetSprayPaint', {'Gives you spray paint'}, '', function(Arguments, Speaker)
+    print(Arguments[1]) 
+    for _,v in pairs(game:GetService("Workspace")["Spray Can Giver"].Giver:GetDescendants()) do
+if v:IsA("TouchTransmitter") then
+firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, v.Parent, 0) --0 is touch
+wait()
+firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, v.Parent, 1) -- 1 is untouch
+end    
+      		end
+    
+end)
+
+
+Window:AddCommand('Burger', {'Gives you burger'}, '', function(Arguments, Speaker)
+    print(Arguments[1]) 
+    local chara = game.Players.LocalPlayer.Character
+            local origin = chara.HumanoidRootPart.CFrame
+            
+    local clickdetector = game:GetService("Workspace").SnackMachine.Selection4.ClickDetector
+
+fireclickdetector(clickdetector)
+chara.HumanoidRootPart.CFrame = CFrame.new(-178.71051, 430.599976, 5512.71729, 0.999999642, 5.4630334e-08, -0.000845939736, -5.45688152e-08, 1, 7.27456211e-08, 0.000845939736, -7.26994358e-08, 0.999999642)
+
+wait(2)
+            chara.HumanoidRootPart.CFrame = origin
+            
+end)
+
+
+
+Window:AddCommand('soda', {'Gives you bloxycola'}, '', function(Arguments, Speaker)
+    print(Arguments[1]) 
+    local chara = game.Players.LocalPlayer.Character
+            local origin = chara.HumanoidRootPart.CFrame
+            
+    local clickdetector = game:GetService("Workspace").SnackMachine.Selection1.ClickDetector
+
+fireclickdetector(clickdetector)
+chara.HumanoidRootPart.CFrame = CFrame.new(-178.71051, 430.599976, 5512.71729, 0.999999642, 5.4630334e-08, -0.000845939736, -5.45688152e-08, 1, 7.27456211e-08, 0.000845939736, -7.26994358e-08, 0.999999642)
+
+wait(2)
+            chara.HumanoidRootPart.CFrame = origin
+            
+end)
+
+
+
+Window:AddCommand('rich', {'Makes you look rich'}, '', function(Arguments, Speaker)
+    print(Arguments[1]) 
+    game:GetService("Players").LocalPlayer.PlayerGui.AvatarEditor.RemoveHats:FireServer()
+wait(0.1)
+
+local args = {
+    [1] = {
+        ["Category"] = "Hat1",
+        ["AssetId"] = "439984665"
+    }
+}
+
+game:GetService("Players").LocalPlayer.PlayerGui.AvatarEditor.WearItem:FireServer(unpack(args))
+
+
+local args = {
+    [1] = {
+        ["Category"] = "Face",
+        ["AssetId"] = "180660043"
+    }
+}
+
+game:GetService("Players").LocalPlayer.PlayerGui.AvatarEditor.WearItem:FireServer(unpack(args))
+
+local args = {
+    [1] = {
+        ["Category"] = "Hat2",
+        ["AssetId"] = "147180077"
+    }
+}
+
+game:GetService("Players").LocalPlayer.PlayerGui.AvatarEditor.WearItem:FireServer(unpack(args))
+local args = {
+    [1] = {
+        ["Category"] = "Pants",
+        ["AssetId"] = "10751340093"
+    }
+}
+
+game:GetService("Players").LocalPlayer.PlayerGui.AvatarEditor.WearItem:FireServer(unpack(args))
+
+local args = {
+    [1] = {
+        ["Category"] = "Shirt",
+        ["AssetId"] = "10916052407"
+    }
+}
+
+game:GetService("Players").LocalPlayer.PlayerGui.AvatarEditor.WearItem:FireServer(unpack(args))
+            
+end)
+
+
+
+Window:AddCommand('cmds', {'put me after cmds'}, 'Prints commands in console', function(Arguments, Speaker)
+    print("COMMANDS ARE:")
+    print("hentai me, furry me, rich me, soda me, burger me, GetSprayPaint me, roleplay (what you want ur rp name to be),")
+    print("goto (name of person/case sens/type full user,rejoin me, ")
+end)
+
+
+Window:AddCommand('RolePlayName', {'Name'}, 'Changes ur rp name', function(Arguments, Speaker)
+    print(Arguments[1]) 
+    local args = {
+    [1] = (Arguments[1])
+}
+
+game:GetService("ReplicatedStorage").SetRoleplayName:InvokeServer(unpack(args))
+end)
+
+
+Window:AddCommand('goto', {'Name'}, 'Teleports to that person.-case sensitive/put full name', function(Arguments, Speaker)
+    print(Arguments[1]) 
+    local Person = game:GetService("Workspace")[(Arguments[1])].HumanoidRootPart.CFrame
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Person
+    
+end)
+
+Window:AddCommand('rejoin', {'"me"'}, 'rejoins game', function(Arguments, Speaker)
+    print(Arguments[1]) 
+local ts = game:GetService("TeleportService")
+
+local p = game:GetService("Players").LocalPlayer
+
+ 
+
+ts:Teleport(game.PlaceId, p)
+end)
+
+
+Window:AddCommand('GetPlayers', {'"Me"'}, 'Prints how many players are in server in console', function(Arguments, Speaker)
+    print(Arguments[1]) 
+    print("There are this many players:")
+print(#game.Players:GetPlayers())
+    
+end)
+Window:AddCommand('GetWorkspace', {'"Me"'}, 'Prints how much stuff are in workspace in con', function(Arguments, Speaker)
+    print(Arguments[1]) 
+    
+    
+print(#game.Players:GetPlayers())
+    
+end)
+
+
+
+
+function GetPlayer()
+    game:GetService("Players"):GetPlayers()
+end
+
