@@ -316,6 +316,7 @@ Window:AddCommand('kidnap', {'player'}, 'kidnaps them', function(Arguments, Spea
 local plr = game.Players.LocalPlayer.Character
 local CF = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
 local lp = game.Players.LocalPlayer
+local char = Speaker.Character
 
 h.Parent = game.Players.LocalPlayer.Character
 h.Name = "Hum"
@@ -327,6 +328,7 @@ for _,v in pairs(game.Players.LocalPlayer:GetDescendants()) do
         v.Parent = plr
     end
 end
+workspace.CurrentCamera.CameraSubject = char
 local Person = game:GetService("Workspace")[(Arguments[1])].HumanoidRootPart.CFrame
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Person
     
@@ -345,7 +347,7 @@ Window:AddCommand('heaven', {'player'}, 'sends them to heaven', function(Argumen
 local plr = game.Players.LocalPlayer.Character
 local CF = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
 local lp = game.Players.LocalPlayer
-
+local char = Speaker.Character
 h.Parent = game.Players.LocalPlayer.Character
 h.Name = "Hum"
 
@@ -356,7 +358,7 @@ for _,v in pairs(game.Players.LocalPlayer:GetDescendants()) do
         v.Parent = plr
     end
 end
-
+workspace.CurrentCamera.CameraSubject = char
 local Person = game:GetService("Workspace")[(Arguments[1])].HumanoidRootPart.CFrame
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Person
 wait(1)
@@ -421,5 +423,4 @@ end)
 function GetPlayer()
     game:GetService("Players"):GetPlayers()
 end
-
 
