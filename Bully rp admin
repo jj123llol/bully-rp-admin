@@ -482,6 +482,47 @@ hrp.CFrame = NormPos
 
 end)
 
+
+
+
+
+Window:AddCommand('give tools', {'player'}, 'gives them tools', function(Arguments, Speaker)
+    print(Arguments[1]) 
+    local NormPos = getRoot(Speaker.Character).CFrame
+    wait(0.5)
+  local h = game.Players.LocalPlayer.Character.Humanoid:Clone()
+local plr = game.Players.LocalPlayer.Character
+local CF = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+local lp = game.Players.LocalPlayer
+local char = Speaker.Character
+local hrp = getRoot(Speaker.Character)
+h.Parent = game.Players.LocalPlayer.Character
+h.Name = "Hum"
+
+game.Players.LocalPlayer.Character.Humanoid:Destroy()
+
+for _,v in pairs(game.Players.LocalPlayer:GetDescendants()) do
+    if v.ClassName == "Tool" then
+        v.Parent = plr
+    end
+end
+workspace.CurrentCamera.CameraSubject = char
+local Person = game:GetService("Workspace")[(Arguments[1])].HumanoidRootPart.CFrame
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Person
+wait(0.1)
+wait(11)
+hrp.CFrame = NormPos
+
+
+end)
+
+
+
+
+
+
+
+
 Window:AddCommand('SecretRoom', {'player'}, 'sends them to secret room(for bully rp only)', function(Arguments, Speaker)
     print(Arguments[1]) 
     local NormPos = getRoot(Speaker.Character).CFrame
@@ -582,6 +623,47 @@ game.Players.LocalPlayer.Character.Humanoid.Jump = true
     
     
 end)
+
+
+
+Window:AddCommand('RadioPP', {'gives pp Radio'}, '', function(Arguments, Speaker)
+    local Name = game.Players.LocalPlayer
+
+local Character = game.Players.LocalPlayer.Character
+
+local Backpack = game.Players.LocalPlayer.Backpack
+    
+    local Tool = "Boombox" -- Tool name in your backpack.
+Character.Humanoid:EquipTool(Backpack[Tool])
+wait(0.1)
+    
+    
+    
+    
+    for _,v in pairs(Speaker.Character:GetChildren()) do
+		if v:IsA("Tool") or v:IsA("HopperBin") then
+			for i,c in pairs(v:GetDescendants()) do
+				if c:IsA("SpecialMesh") then
+					c:Destroy()
+				end
+			end
+		end
+    end
+    wait(1)
+    
+    for i,v in pairs(Speaker.Character:GetDescendants()) do
+		if v:IsA("Tool") then
+			v.Parent = Speaker:FindFirstChildOfClass("Backpack")
+			v.GripPos = Vector3.new(-0.5,1.5,1.5) 
+			v.Parent = Speaker.Character
+		end
+    end
+    
+    
+    
+    
+    
+    end)
 
 
 
