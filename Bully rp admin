@@ -262,6 +262,7 @@ Window:AddCommand('cmds', {'put me after cmds'}, 'Prints commands in console', f
     print("COMMANDS ARE:")
     print("hentai me, furry me, rich me, soda me, burger me, GetSprayPaint me, roleplay (what you want ur rp name to be),")
     print("goto (name of person/case sens/type full user,rejoin me, ")
+    print("GetPlayers me, GetWorkspace me, kidnap, banlands, heaven, secretroom(for bully rp only) ")
 end)
 
 
