@@ -312,6 +312,8 @@ end)
 
 Window:AddCommand('kidnap', {'player'}, 'kidnaps them', function(Arguments, Speaker)
     print(Arguments[1]) 
+    local NormPos = getRoot(Speaker.Character).CFrame
+    wait(0.5)
   local h = game.Players.LocalPlayer.Character.Humanoid:Clone()
 local plr = game.Players.LocalPlayer.Character
 local CF = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
@@ -338,11 +340,15 @@ tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new(200, En
 
 tween = tweenService:Create(game:GetService("Players")["LocalPlayer"].Character.HumanoidRootPart, tweenInfo, {CFrame = CFrame.new(0, 0, 99999)})
 tween:Play()
+wait(11)
+Speaker.CharacterAdded:Wait():WaitForChild("HumanoidRootPart").CFrame = NormPos
 end)
 
 
 Window:AddCommand('heaven', {'player'}, 'sends them to heaven', function(Arguments, Speaker)
     print(Arguments[1]) 
+    local NormPos = getRoot(Speaker.Character).CFrame
+    wait(0.5)
   local h = game.Players.LocalPlayer.Character.Humanoid:Clone()
 local plr = game.Players.LocalPlayer.Character
 local CF = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
@@ -367,11 +373,15 @@ tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new(100, En
 
 tween = tweenService:Create(game:GetService("Players")["LocalPlayer"].Character.HumanoidRootPart, tweenInfo, {CFrame = CFrame.new(0, 10000, 0)})
 tween:Play()
+wait(11)
+Speaker.CharacterAdded:Wait():WaitForChild("HumanoidRootPart").CFrame = NormPos
 end)
 
 
 Window:AddCommand('banlands', {'player'}, 'sends them to banlands', function(Arguments, Speaker)
     print(Arguments[1]) 
+    local NormPos = getRoot(Speaker.Character).CFrame
+    wait(0.5)
   local h = game.Players.LocalPlayer.Character.Humanoid:Clone()
 local plr = game.Players.LocalPlayer.Character
 local CF = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
@@ -392,6 +402,44 @@ local Person = game:GetService("Workspace")[(Arguments[1])].HumanoidRootPart.CFr
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Person
 wait(1)
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-999999999999999999999999999999, 2647586.5, 16135477, -0.989213824, 0.00574239623, 0.146365836, 0.005804908, 0.999983132, -2.75625993e-08, -0.146363363, 0.00084961293, -0.989230514)
+wait(11)
+Speaker.CharacterAdded:Wait():WaitForChild("HumanoidRootPart").CFrame = NormPos
+
+
+end)
+
+Window:AddCommand('SecretRoom', {'player'}, 'sends them to secret room(for bully rp only)', function(Arguments, Speaker)
+    print(Arguments[1]) 
+    local NormPos = getRoot(Speaker.Character).CFrame
+    wait(0.5)
+  local h = game.Players.LocalPlayer.Character.Humanoid:Clone()
+local plr = game.Players.LocalPlayer.Character
+local CF = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+local lp = game.Players.LocalPlayer
+local char = Speaker.Character
+h.Parent = game.Players.LocalPlayer.Character
+h.Name = "Hum"
+
+game.Players.LocalPlayer.Character.Humanoid:Destroy()
+
+for _,v in pairs(game.Players.LocalPlayer:GetDescendants()) do
+    if v.ClassName == "Tool" then
+        v.Parent = plr
+    end
+end
+workspace.CurrentCamera.CameraSubject = char
+local Person = game:GetService("Workspace")[(Arguments[1])].HumanoidRootPart.CFrame
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Person
+wait(1)
+tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new(0, Enum.EasingStyle.Linear)
+
+tween = tweenService:Create(game:GetService("Players")["LocalPlayer"].Character.HumanoidRootPart, tweenInfo, {CFrame = CFrame.new(-82.2578125, 451.800171, 5529.99072, -0.799662828, 3.5737731e-08, -0.600449264, 5.41002514e-08, 1, -1.25309993e-08, 0.600449264, -4.25050324e-08, -0.799662828)})
+tween:Play()
+
+wait(11)
+Speaker.CharacterAdded:Wait():WaitForChild("HumanoidRootPart").CFrame = NormPos
+
+
 end)
 
 
@@ -449,4 +497,9 @@ function GetPlayer()
     game:GetService("Players"):GetPlayers()
 end
 
+
+function getRoot(char)
+	local rootPart = char:FindFirstChild('HumanoidRootPart') or char:FindFirstChild('Torso') or char:FindFirstChild('UpperTorso')
+	return rootPart
+end
 
