@@ -410,6 +410,40 @@ Speaker.CharacterAdded:Wait():WaitForChild("HumanoidRootPart").CFrame = NormPos
 
 end)
 
+
+
+
+Window:AddCommand('kill', {'player'}, 'kills them', function(Arguments, Speaker)
+    print(Arguments[1]) 
+    local NormPos = getRoot(Speaker.Character).CFrame
+    wait(0.5)
+  local h = game.Players.LocalPlayer.Character.Humanoid:Clone()
+local plr = game.Players.LocalPlayer.Character
+local CF = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+local lp = game.Players.LocalPlayer
+local char = Speaker.Character
+local hrp = getRoot(Speaker.Character)
+h.Parent = game.Players.LocalPlayer.Character
+h.Name = "Hum"
+
+game.Players.LocalPlayer.Character.Humanoid:Destroy()
+
+for _,v in pairs(game.Players.LocalPlayer:GetDescendants()) do
+    if v.ClassName == "Tool" then
+        v.Parent = plr
+    end
+end
+workspace.CurrentCamera.CameraSubject = char
+local Person = game:GetService("Workspace")[(Arguments[1])].HumanoidRootPart.CFrame
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Person
+wait(1)
+hrp.CFrame = CFrame.new(999999, workspace.FallenPartsDestroyHeight + 5,999999)
+wait(11)
+Speaker.CharacterAdded:Wait():WaitForChild("HumanoidRootPart").CFrame = NormPos
+
+
+end)
+
 Window:AddCommand('SecretRoom', {'player'}, 'sends them to secret room(for bully rp only)', function(Arguments, Speaker)
     print(Arguments[1]) 
     local NormPos = getRoot(Speaker.Character).CFrame
@@ -575,4 +609,5 @@ function getRoot(char)
 	local rootPart = char:FindFirstChild('HumanoidRootPart') or char:FindFirstChild('Torso') or char:FindFirstChild('UpperTorso')
 	return rootPart
 end
+
 
