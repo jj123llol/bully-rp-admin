@@ -263,6 +263,7 @@ Window:AddCommand('cmds', {'put me after cmds'}, 'Prints commands in console', f
     print("hentai me, furry me, rich me, soda me, burger me, GetSprayPaint me, roleplay (what you want ur rp name to be),")
     print("goto (name of person/case sens/type full user,rejoin me, ")
     print("GetPlayers me, GetWorkspace me, kidnap, banlands, heaven, secretroom(for bully rp only) ")
+    print("pp me, blocktool me, FixAnims me (fixes anims form pp cmd) ")
 end)
 
 
@@ -440,11 +441,82 @@ tween:Play()
 wait(11)
 Speaker.CharacterAdded:Wait():WaitForChild("HumanoidRootPart").CFrame = NormPos
 
+end)
 
+Window:AddCommand('blocktool', {'blocks tool'}, '', function(Arguments, Speaker)
+    print(Arguments[1]) 
+    for _,v in pairs(Speaker.Character:GetChildren()) do
+		if v:IsA("Tool") or v:IsA("HopperBin") then
+			for i,c in pairs(v:GetDescendants()) do
+				if c:IsA("SpecialMesh") then
+					c:Destroy()
+				end
+			end
+		end
+    end
+end)
+
+
+Window:AddCommand('pp', {'gives pp'}, '', function(Arguments, Speaker)
+    print(Arguments[1]) 
+    local Name = game.Players.LocalPlayer
+
+local Character = game.Players.LocalPlayer.Character
+
+local Backpack = game.Players.LocalPlayer.Backpack
+
+local Tool = "Pen" -- Tool name in your backpack.
+Character.Humanoid:EquipTool(Backpack[Tool])
+wait(0.1)
+    
+    
+    
+    
+    for _,v in pairs(Speaker.Character:GetChildren()) do
+		if v:IsA("Tool") or v:IsA("HopperBin") then
+			for i,c in pairs(v:GetDescendants()) do
+				if c:IsA("SpecialMesh") then
+					c:Destroy()
+				end
+			end
+		end
+    end
+    
+    local Human = Speaker.Character and Speaker.Character:FindFirstChildOfClass('Humanoid')
+	if not Human then
+		return
+	end
+	Human.Sit = true
+	task.wait(.1)
+	Human.RootPart.CFrame = Human.RootPart.CFrame * CFrame.Angles(math.pi * .5, 0, 0)
+	for _, v in ipairs(Human:GetPlayingAnimationTracks()) do
+		v:Stop()
+	end
+	
+    
+    
+    wait(0.4)
+    Speaker.Character.Animate.Disabled = true
+    wait()
+    for i,v in pairs(Speaker.Character:GetDescendants()) do
+		if v:IsA("Tool") then
+			v.Parent = Speaker:FindFirstChildOfClass("Backpack")
+			v.GripPos = Vector3.new(0.1,-1.5,1) 
+			v.Parent = Speaker.Character
+		end
+    end
+    wait(0.1)
+game.Players.LocalPlayer.Character.Humanoid.Jump = true
+    
+    
 end)
 
 
 
+Window:AddCommand('FixAnims', {'Fixes animations from pp cmd'}, '', function(Arguments, Speaker)
+    print(Arguments[1]) 
+    Speaker.Character.Animate.Disabled = false
+end)
 
 
 
