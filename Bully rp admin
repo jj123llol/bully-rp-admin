@@ -1,12 +1,21 @@
 local Library = loadstring(game:HttpGet('https://raw.githubusercontent.com/VisualRoblox/Roblox/main/UI-Libraries/Visual%20Command%20UI%20Library/Source.lua', true))()
 
+
+
+
+
+
+
+
+
+
 local Window = Library:CreateWindow({
     Name = 'Bully rp admin-by jude', -- // The name of the created window.
     IntroText = 'Judes shitty admin', -- // The text that will show in the intro / loading screen.
     IntroIcon = 'rbxassetid://11215015018', -- // The AssetId of the icon that will show in the intro / loading screen.
     IntroBlur = true, -- // If there should be a blur during the intro.
     IntroBlurIntensity = 15, -- // The intensity of the blur.
-    Theme = Library.Themes.dark, -- // The theme the library should use (see more in Themes.md).
+    Theme = Library.Themes.Dark, -- // The theme the library should use (see more in Themes.md).
     Position = 'bottom', -- // The position the Window can be in (Top, TopLeft, TopRight, Bottom, BottomLeft, BottomRight).
     Draggable = true, -- // If the window is draggable (Only only X-axis).
     Prefix = ';' -- // The prefix that will be used before typing a command (will make the UI popup as well).
@@ -729,5 +738,79 @@ function getRoot(char)
 	local rootPart = char:FindFirstChild('HumanoidRootPart') or char:FindFirstChild('Torso') or char:FindFirstChild('UpperTorso')
 	return rootPart
 end
+
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local ScreenGui = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local ImageLabel = Instance.new("ImageLabel")
+local TextLabel = Instance.new("TextLabel")
+local TextLabel_2 = Instance.new("TextLabel")
+local Close = Instance.new("TextButton")
+
+--Properties:
+
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Frame.Parent = ScreenGui
+Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Frame.Position = UDim2.new(0.650793672, 0, 0.131025955, 0)
+Frame.Size = UDim2.new(0, 100, 0, 100)
+
+ImageLabel.Parent = Frame
+ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ImageLabel.Position = UDim2.new(-0.00920635462, 0, -0.00897406042, 0)
+ImageLabel.Size = UDim2.new(0, 100, 0, 100)
+ImageLabel.Image = "rbxassetid://11215015018"
+
+TextLabel.Parent = Frame
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.Position = UDim2.new(0.424920619, 0, -0.500778735, 0)
+TextLabel.Size = UDim2.new(0, 200, 0, 50)
+TextLabel.Font = Enum.Font.SourceSans
+TextLabel.Text = "Its shitty but deal with it"
+TextLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.TextSize = 14.000
+
+TextLabel_2.Parent = Frame
+TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.Position = UDim2.new(-1.58380938, 0, -0.510778725, 0)
+TextLabel_2.Size = UDim2.new(0, 200, 0, 50)
+TextLabel_2.Font = Enum.Font.SourceSans
+TextLabel_2.Text = "Judes shitty admin"
+TextLabel_2.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_2.TextSize = 14.000
+
+Close.Name = "Close"
+Close.Parent = Frame
+Close.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+Close.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Close.Position = UDim2.new(2.02111125, 0, -0.00897404552, 0)
+Close.Size = UDim2.new(0, 40, 0, 50)
+Close.Font = Enum.Font.SourceSans
+Close.Text = "X"
+Close.TextColor3 = Color3.fromRGB(0, 0, 0)
+Close.TextScaled = true
+Close.TextSize = 14.000
+Close.TextWrapped = true
+
+-- Scripts:
+
+local function MWFZKZW_fake_script() -- Close.LocalScript 
+	local script = Instance.new('LocalScript', Close)
+
+	
+	local Frame = script.Parent.Parent
+	
+	script.Parent.MouseButton1Click:Connect(function()
+		Frame.Visible = false
+	end)
+	
+end
+coroutine.wrap(MWFZKZW_fake_script)()
 
 
