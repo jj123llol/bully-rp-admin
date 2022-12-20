@@ -1,5 +1,5 @@
-
 local Library = loadstring(game:HttpGet('https://raw.githubusercontent.com/VisualRoblox/Roblox/main/UI-Libraries/Visual%20Command%20UI%20Library/Source.lua', true))()
+
 
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/jj123llol/My-personal-admin/main/admin",true))()
@@ -270,7 +270,7 @@ end)
 
 
 Window:AddCommand('cmds', {'put me after cmds'}, 'Makes gui appear with cmds', function(Arguments, Speaker)
-    -- Gui to Lua
+  -- Gui to Lua
 -- Version: 3.2
 
 -- Instances:
@@ -400,10 +400,13 @@ TextLabel_10.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 TextLabel_10.Position = UDim2.new(0, 0, 0.818401933, 0)
 TextLabel_10.Size = UDim2.new(0, 260, 0, 22)
 TextLabel_10.Font = Enum.Font.SourceSans
-TextLabel_10.Text = "Getspraypaint,MORE SOON"
+TextLabel_10.Text = "Getspraypaint,lay,MORE SOON"
 TextLabel_10.TextColor3 = Color3.fromRGB(0, 0, 0)
 TextLabel_10.TextSize = 14.000
-local function NCATX_fake_script() -- TextButton.LocalScript 
+
+-- Scripts:
+
+local function JEULCP_fake_script() -- TextButton.LocalScript 
 	local script = Instance.new('LocalScript', TextButton)
 
 	
@@ -414,7 +417,8 @@ local function NCATX_fake_script() -- TextButton.LocalScript
 	end)
 	
 end
-coroutine.wrap(NCATX_fake_script)()
+coroutine.wrap(JEULCP_fake_script)()
+
 
 end)
 
@@ -638,7 +642,7 @@ end)
 
 
 
-Window:AddCommand('give tools', {'player'}, 'gives them tools', function(Arguments, Speaker)
+Window:AddCommand('givetools', {'player'}, 'gives them tools', function(Arguments, Speaker)
     print(Arguments[1]) 
     local NormPos = getRoot(Speaker.Character).CFrame
     wait(0.5)
@@ -650,6 +654,8 @@ local char = Speaker.Character
 local hrp = getRoot(Speaker.Character)
 h.Parent = game.Players.LocalPlayer.Character
 h.Name = "Hum"
+local Person = game:GetService("Workspace")[(Arguments[1])].HumanoidRootPart.CFrame
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Person
 
 game.Players.LocalPlayer.Character.Humanoid:Destroy()
 
@@ -659,8 +665,7 @@ for _,v in pairs(game.Players.LocalPlayer:GetDescendants()) do
     end
 end
 workspace.CurrentCamera.CameraSubject = char
-local Person = game:GetService("Workspace")[(Arguments[1])].HumanoidRootPart.CFrame
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Person
+
 wait(0.1)
 wait(11)
 hrp.CFrame = NormPos
@@ -720,6 +725,36 @@ Window:AddCommand('blocktool', {'blocks tool'}, '', function(Arguments, Speaker)
 		end
     end
 end)
+
+
+
+
+
+Window:AddCommand('lay', {'makes you lay'}, '', function(Arguments, Speaker)
+    print(Arguments[1]) 
+local Human = Speaker.Character and Speaker.Character:FindFirstChildOfClass('Humanoid')
+
+Human.Sit = true
+	task.wait(.1)
+	Human.RootPart.CFrame = Human.RootPart.CFrame * CFrame.Angles(math.pi * .5, 0, 0)
+	for _, v in ipairs(Human:GetPlayingAnimationTracks()) do
+		v:Stop()
+	end
+	
+
+end)
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 Window:AddCommand('pp', {'gives pp'}, '', function(Arguments, Speaker)
