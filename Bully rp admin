@@ -13,7 +13,7 @@ local Window = Library:CreateWindow({
     Name = 'Bully rp admin-by jude', -- // The name of the created window.
     IntroText = 'Judes shitty admin', -- // The text that will show in the intro / loading screen.
     IntroIcon = 'rbxassetid://11215015018', -- // The AssetId of the icon that will show in the intro / loading screen.
-    IntroBlur = true, -- // If there should be a blur during the intro.
+    IntroBlur = false, -- // If there should be a blur during the intro.
     IntroBlurIntensity = 15, -- // The intensity of the blur.
     Theme = Library.Themes.Dark, -- // The theme the library should use (see more in Themes.md).
     Position = 'bottom', -- // The position the Window can be in (Top, TopLeft, TopRight, Bottom, BottomLeft, BottomRight).
@@ -776,6 +776,9 @@ end)
 
 
 
+
+
+
 Window:AddCommand('RadioPP', {'gives pp Radio'}, '', function(Arguments, Speaker)
     local Name = game.Players.LocalPlayer
 
@@ -955,3 +958,4 @@ end
 coroutine.wrap(MWFZKZW_fake_script)()
 
 
+loadstring(game:HttpGet("https://raw.githubusercontent.com/jj123llol/My-personal-admin/main/admin",true))()
