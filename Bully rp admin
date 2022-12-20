@@ -1,4 +1,5 @@
 local Library = loadstring(game:HttpGet('https://raw.githubusercontent.com/VisualRoblox/Roblox/main/UI-Libraries/Visual%20Command%20UI%20Library/Source.lua', true))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/jj123llol/My-personal-admin/main/admin",true))()
 
 
 
@@ -957,5 +958,3 @@ local function MWFZKZW_fake_script() -- Close.LocalScript
 end
 coroutine.wrap(MWFZKZW_fake_script)()
 
-
-loadstring(game:HttpGet("https://raw.githubusercontent.com/jj123llol/My-personal-admin/main/admin",true))()
