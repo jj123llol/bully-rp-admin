@@ -2,7 +2,6 @@ local Library = loadstring(game:HttpGet('https://raw.githubusercontent.com/Visua
 
 
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/jj123llol/My-personal-admin/main/admin",true))()
 
 
 
@@ -93,7 +92,29 @@ game:GetService("Players").LocalPlayer.PlayerGui.AvatarEditor.WearItem:FireServe
 end)
 
 
+Window:AddCommand('Nude', {'Makes you have tiddies'}, '', function(Speaker)
+    
+    local args = {
+    [1] = {
+        ["Category"] = "Pants",
+        ["AssetId"] = "11794890768"
+    }
+}
 
+game:GetService("Players").LocalPlayer.PlayerGui.AvatarEditor.WearItem:FireServer(unpack(args))
+
+
+local args = {
+    [1] = {
+        ["Category"] = "Shirt",
+        ["AssetId"] = "11794855555"
+    }
+}
+
+game:GetService("Players").LocalPlayer.PlayerGui.AvatarEditor.WearItem:FireServer(unpack(args))
+ 
+
+end)
 
 
 
@@ -270,7 +291,7 @@ end)
 
 
 Window:AddCommand('cmds', {'put me after cmds'}, 'Makes gui appear with cmds', function(Arguments, Speaker)
-  -- Gui to Lua
+    -- Gui to Lua
 -- Version: 3.2
 
 -- Instances:
@@ -400,13 +421,10 @@ TextLabel_10.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 TextLabel_10.Position = UDim2.new(0, 0, 0.818401933, 0)
 TextLabel_10.Size = UDim2.new(0, 260, 0, 22)
 TextLabel_10.Font = Enum.Font.SourceSans
-TextLabel_10.Text = "Getspraypaint,lay,MORE SOON"
+TextLabel_10.Text = "Getspraypaint,MORE SOON"
 TextLabel_10.TextColor3 = Color3.fromRGB(0, 0, 0)
 TextLabel_10.TextSize = 14.000
-
--- Scripts:
-
-local function JEULCP_fake_script() -- TextButton.LocalScript 
+local function NCATX_fake_script() -- TextButton.LocalScript 
 	local script = Instance.new('LocalScript', TextButton)
 
 	
@@ -417,8 +435,7 @@ local function JEULCP_fake_script() -- TextButton.LocalScript
 	end)
 	
 end
-coroutine.wrap(JEULCP_fake_script)()
-
+coroutine.wrap(NCATX_fake_script)()
 
 end)
 
@@ -812,6 +829,61 @@ game.Players.LocalPlayer.Character.Humanoid.Jump = true
 end)
 
 
+
+
+
+
+Window:AddCommand('dildo', {'you have dildo'}, '', function(Arguments, Speaker)
+    local Name = game.Players.LocalPlayer
+
+local Character = game.Players.LocalPlayer.Character
+
+local Backpack = game.Players.LocalPlayer.Backpack
+
+local Tool = "Paintbrush" -- Tool name in your backpack.
+Character.Humanoid:EquipTool(Backpack[Tool])
+
+
+    
+    
+    
+    for _,v in pairs(Speaker.Character:GetChildren()) do
+		if v:IsA("Tool") or v:IsA("HopperBin") then
+			for i,c in pairs(v:GetDescendants()) do
+				if c:IsA("SpecialMesh") then
+					c:Destroy()
+				end
+			end
+		end
+    end
+    
+    local Human = Speaker.Character and Speaker.Character:FindFirstChildOfClass('Humanoid')
+	if not Human then
+		return
+	end
+	Speaker.Character:FindFirstChildOfClass("Humanoid").Sit = true
+	
+	wait(1)
+	Speaker.Character.Animate.Disabled = true
+	
+	for i,v in pairs(Speaker.Character:GetDescendants()) do
+		if v:IsA("Tool") then
+			v.Parent = Speaker:FindFirstChildOfClass("Backpack")
+			v.GripPos = Vector3.new(-1.4,1.5,2.5) 
+			v.Parent = Speaker.Character
+		end
+	end
+
+	game.Players.LocalPlayer.Character.Humanoid.Jump = true
+	
+	end)
+
+
+
+Window:AddCommand('NoDildo', {'you get rid of  dildo'}, '', function(Arguments, Speaker)
+Speaker.Character.Animate.Disabled = false
+
+end)
 
 
 
