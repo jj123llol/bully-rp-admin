@@ -290,6 +290,45 @@ end)
 
 
 
+Window:AddCommand('White', {'you become the co-owner'}, '', function(Arguments, Speaker)
+    
+    local args = {
+    [1] = {
+        ["Category"] = "Hat1",
+        ["AssetId"] = "7133520069"
+    }
+}
+
+game:GetService("Players").LocalPlayer.PlayerGui.AvatarEditor.WearItem:FireServer(unpack(args))
+
+
+local args = {
+    [1] = {
+        ["Category"] = "Pants",
+        ["AssetId"] = "6823021663"
+    }
+}
+
+game:GetService("Players").LocalPlayer.PlayerGui.AvatarEditor.WearItem:FireServer(unpack(args))
+
+
+local args = {
+    [1] = {
+        ["Category"] = "Shirt",
+        ["AssetId"] = "6657822202"
+    }
+}
+
+game:GetService("Players").LocalPlayer.PlayerGui.AvatarEditor.WearItem:FireServer(unpack(args))
+    end)
+
+
+
+
+
+
+
+
 Window:AddCommand('cmds', {'put me after cmds'}, 'Makes gui appear with cmds', function(Arguments, Speaker)
     -- Gui to Lua
 -- Version: 3.2
@@ -1065,4 +1104,3 @@ local function MWFZKZW_fake_script() -- Close.LocalScript
 	
 end
 coroutine.wrap(MWFZKZW_fake_script)()
-
