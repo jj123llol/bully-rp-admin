@@ -1,6 +1,54 @@
+local WearShirt = function(SWAWS) 
+    local args = {
+        [1] = {
+            ["Category"] = "Shirt",
+            ["AssetId"] = SWAWS
+        }
+    }
+    
+    game:GetService("Players").LocalPlayer.PlayerGui.AvatarEditor.WearItem:FireServer(unpack(args)) 
+end
+
+
+
+local WearFace = function(SWAWS) 
+    local args = {
+        [1] = {
+            ["Category"] = "Face",
+            ["AssetId"] = SWAWS
+        }
+    }
+    
+    game:GetService("Players").LocalPlayer.PlayerGui.AvatarEditor.WearItem:FireServer(unpack(args)) 
+end
+
+
+local WearPants = function(SWAWS) 
+    local args = {
+        [1] = {
+            ["Category"] = "Pants",
+            ["AssetId"] = SWAWS
+        }
+    }
+    
+    game:GetService("Players").LocalPlayer.PlayerGui.AvatarEditor.WearItem:FireServer(unpack(args)) 
+end
+
+local WearHats = function(ID) 
+    local args = {
+        [1] = {
+            ["Category"] = 'Hat2',
+            ["AssetId"] = ID
+        }
+    }
+    
+    game:GetService("Players").LocalPlayer.PlayerGui.AvatarEditor.WearItem:FireServer(unpack(args))
+end
+
+
+
+
 local Library = loadstring(game:HttpGet('https://raw.githubusercontent.com/VisualRoblox/Roblox/main/UI-Libraries/Visual%20Command%20UI%20Library/Source.lua', true))()
-
-
 
 
 
@@ -42,151 +90,21 @@ end)
 Window:AddCommand('furry', {'turns you into a furry'}, '', function(Speaker)
 game:GetService("Players").LocalPlayer.PlayerGui.AvatarEditor.RemoveHats:FireServer()
 wait(0.1)
-local args = {
-    [1] = {
-        ["Category"] = "Hat1",
-        ["AssetId"] = "11600219096"
-    }
-}
-
-game:GetService("Players").LocalPlayer.PlayerGui.AvatarEditor.WearItem:FireServer(unpack(args))
-
-local args = {
-    [1] = {
-        ["Category"] = "Hat2",
-        ["AssetId"] = "11600222535"
-    }
-}
-
-game:GetService("Players").LocalPlayer.PlayerGui.AvatarEditor.WearItem:FireServer(unpack(args))
-
-local args = {
-    [1] = {
-        ["Category"] = "Hat3",
-        ["AssetId"] = "11600208131"
-    }
-}
-
-game:GetService("Players").LocalPlayer.PlayerGui.AvatarEditor.WearItem:FireServer(unpack(args))
-
-local args = {
-    [1] = {
-        ["Category"] = "Pants",
-        ["AssetId"] = "11621750098"
-    }
-}
-
-game:GetService("Players").LocalPlayer.PlayerGui.AvatarEditor.WearItem:FireServer(unpack(args))
-
-
-local args = {
-    [1] = {
-        ["Category"] = "Shirt",
-        ["AssetId"] = "11621737497"
-    }
-}
-
-game:GetService("Players").LocalPlayer.PlayerGui.AvatarEditor.WearItem:FireServer(unpack(args))
- 
-
+WearHats("11600219096")
+WearHats("11600222535")
+WearHats("11600208131")
+WearPants("11621750098")
+WearShirt("11621737497")
 end)
-
-
-Window:AddCommand('Nude', {'Makes you have tiddies'}, '', function(Speaker)
-    
-    local args = {
-    [1] = {
-        ["Category"] = "Pants",
-        ["AssetId"] = "11794890768"
-    }
-}
-
-game:GetService("Players").LocalPlayer.PlayerGui.AvatarEditor.WearItem:FireServer(unpack(args))
-
-
-local args = {
-    [1] = {
-        ["Category"] = "Shirt",
-        ["AssetId"] = "11794855555"
-    }
-}
-
-game:GetService("Players").LocalPlayer.PlayerGui.AvatarEditor.WearItem:FireServer(unpack(args))
- 
-
-end)
-
-
-
-
-
-
-
-
-
 Window:AddCommand('hentai', {'Makes you a hentai girl'}, '', function(Speaker)
 game:GetService("Players").LocalPlayer.PlayerGui.AvatarEditor.RemoveHats:FireServer()
 wait(0.1)
-local args = {
-    [1] = {
-        ["Category"] = "Hat1",
-        ["AssetId"] = "107900101866"
-    }
-}
-
-game:GetService("Players").LocalPlayer.PlayerGui.AvatarEditor.WearItem:FireServer(unpack(args))
-
-local args = {
-    [1] = {
-        ["Category"] = "Hat2",
-        ["AssetId"] = "10824058593"
-    }
-}
-
-game:GetService("Players").LocalPlayer.PlayerGui.AvatarEditor.WearItem:FireServer(unpack(args))
-
-local args = {
-    [1] = {
-        ["Category"] = "Hat3",
-        ["AssetId"] = "9731244002"
-    }
-}
-
-game:GetService("Players").LocalPlayer.PlayerGui.AvatarEditor.WearItem:FireServer(unpack(args))
-
-local args = {
-    [1] = {
-        ["Category"] = "Face",
-        ["AssetId"] = "66330310"
-    }
-}
-
-game:GetService("Players").LocalPlayer.PlayerGui.AvatarEditor.WearItem:FireServer(unpack(args))
-
-
-
-
-
-local args = {
-    [1] = {
-        ["Category"] = "Pants",
-        ["AssetId"] = "11117475304"
-    }
-}
-
-game:GetService("Players").LocalPlayer.PlayerGui.AvatarEditor.WearItem:FireServer(unpack(args))
-
-
-local args = {
-    [1] = {
-        ["Category"] = "Shirt",
-        ["AssetId"] = "11097185303"
-    }
-}
-
-game:GetService("Players").LocalPlayer.PlayerGui.AvatarEditor.WearItem:FireServer(unpack(args))
- 
-
+WearHats("107900101866")
+WearHats("10824058593")
+WearHats("9731244002")
+WearFace("66330310")
+WearPants("11117475304")
+WearShirt("11097185303")
 end)
 
 Window:AddCommand('GetSprayPaint', {'Gives you spray paint'}, '', function(Arguments, Speaker)
@@ -240,86 +158,19 @@ Window:AddCommand('rich', {'Makes you look rich'}, '', function(Arguments, Speak
     print(Arguments[1]) 
     game:GetService("Players").LocalPlayer.PlayerGui.AvatarEditor.RemoveHats:FireServer()
 wait(0.1)
-
-local args = {
-    [1] = {
-        ["Category"] = "Hat1",
-        ["AssetId"] = "439984665"
-    }
-}
-
-game:GetService("Players").LocalPlayer.PlayerGui.AvatarEditor.WearItem:FireServer(unpack(args))
-
-
-local args = {
-    [1] = {
-        ["Category"] = "Face",
-        ["AssetId"] = "180660043"
-    }
-}
-
-game:GetService("Players").LocalPlayer.PlayerGui.AvatarEditor.WearItem:FireServer(unpack(args))
-
-local args = {
-    [1] = {
-        ["Category"] = "Hat2",
-        ["AssetId"] = "147180077"
-    }
-}
-
-game:GetService("Players").LocalPlayer.PlayerGui.AvatarEditor.WearItem:FireServer(unpack(args))
-local args = {
-    [1] = {
-        ["Category"] = "Pants",
-        ["AssetId"] = "10751340093"
-    }
-}
-
-game:GetService("Players").LocalPlayer.PlayerGui.AvatarEditor.WearItem:FireServer(unpack(args))
-
-local args = {
-    [1] = {
-        ["Category"] = "Shirt",
-        ["AssetId"] = "10916052407"
-    }
-}
-
-game:GetService("Players").LocalPlayer.PlayerGui.AvatarEditor.WearItem:FireServer(unpack(args))
-            
+WearHats("439984665")
+WearHats("147180077")
+WearFace("180660043")
+WearPants("10751340093")
+WearShirt("10916052407")          
 end)
 
 
 
 Window:AddCommand('White', {'you become the co-owner'}, '', function(Arguments, Speaker)
-    
-    local args = {
-    [1] = {
-        ["Category"] = "Hat1",
-        ["AssetId"] = "7133520069"
-    }
-}
-
-game:GetService("Players").LocalPlayer.PlayerGui.AvatarEditor.WearItem:FireServer(unpack(args))
-
-
-local args = {
-    [1] = {
-        ["Category"] = "Pants",
-        ["AssetId"] = "6823021663"
-    }
-}
-
-game:GetService("Players").LocalPlayer.PlayerGui.AvatarEditor.WearItem:FireServer(unpack(args))
-
-
-local args = {
-    [1] = {
-        ["Category"] = "Shirt",
-        ["AssetId"] = "6657822202"
-    }
-}
-
-game:GetService("Players").LocalPlayer.PlayerGui.AvatarEditor.WearItem:FireServer(unpack(args))
+    WearHats("7133520069")
+WearFace("180660043")
+WearShirt("6657822202")  
     end)
 
 
